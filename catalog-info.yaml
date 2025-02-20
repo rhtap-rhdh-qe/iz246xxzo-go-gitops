@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: iz246xxzo-go-gitops
+  description: This is GitOps manifest for iz246xxzo-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=iz246xxzo-go
+    backstage.io/kubernetes-id: iz246xxzo-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: iz246xxzo-go   
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:iz246xxzo-go
